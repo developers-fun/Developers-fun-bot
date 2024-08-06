@@ -12,7 +12,7 @@ const client = new Client({
 
 // Allowed role IDs
 const ALLOWED_ROLES = [
-  '1269410534558666752' // Mod role ID
+  '1270051012996108308' // Mod role ID
 ];
 
 client.on('interactionCreate', async (interaction) => {
@@ -146,7 +146,7 @@ client.on('interactionCreate', async (interaction) => {
             if (interaction.customId === 'ticket-modal-claim-giveaway') {
                 const giver = interaction.fields.getTextInputValue('giver');
                 const amount = interaction.fields.getTextInputValue('amount');
-                channelName = `${interaction.user.username}-${amount}`;
+                channelName = `${giver}-${amount}`;
                 embedFields.push({ name: 'Giver', value: giver }, { name: 'Amount', value: amount });
             }
 
@@ -174,7 +174,7 @@ client.on('interactionCreate', async (interaction) => {
                             ],
                         },
                         {
-                            id: '1269410534558666752', // Mod role ID
+                            id: '1270051012996108308', // Mod role ID
                             allow: [
                                 PermissionsBitField.Flags.ViewChannel,
                                 PermissionsBitField.Flags.SendMessages,
